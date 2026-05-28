@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Melodrama";
+  src:
+    url("/fonts/melodrama/Melodrama-Regular.woff2") format("woff2"),
+    url("/fonts/melodrama/Melodrama-Regular.woff") format("woff"),
+    url("/fonts/melodrama/Melodrama-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Jost";
+  src: url("/fonts/jost/Jost-Regular.ttf") format("truetype");
+}
+
+.font-jost {
+  font-family: Jost, sans-serif;
+}
+
+.font-melodrama {
+  font-family: Melodrama, Jost, sans-serif;
+}
+
+* {
+  ::selection {
+    background-color: hsla(0, 0%, 47%, 0.377);
+    color: white;
+  }
+}
+
+/* :root {
+  --color-background: #504B38;
+  --color-text: #F8F3D9;
+  --color-primary: #F8F3D9;
+  --color-secondary: #EBE5C2;
+  --color-tertiary: #B9B28A;
+} */
+:root {
+  --color-background: hsl(0, 0%, 0%);
+  --color-text: hsl(0, 0%, 100%);
+  --color-primary: hsl(0 0% 100%);
+  --color-secondary: hsl(0 0% 70%);
+  --color-tertiary: hsl(0 0% 50%);
+
+  .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+  }
+
+  .swiper-pagination-bullet-active {
+    background: white;
+    transform: scale(1);
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    color: white;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 1.5px;
+  }
+}
+
+html,
+body {
+  font-family: "Jost", system-ui, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background: #f8f8f8;
+    --color-text: #1a1a1a;
+    --color-primary: #1a1a1a;
+    --color-secondary: #666666;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  background: black;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0;
+  animation: fadeInOut 2s forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
