@@ -1,6 +1,6 @@
 import Hero from "@/components/sections/hero";
 import Projects from "@/components/sections/projects";
-import Blogs from "@/components/sections/blogs";
+// import Blogs from "@/components/sections/blogs";
 import Footer from "@/components/sections/footer";
 
 const jsonLd = {
@@ -38,7 +38,7 @@ export default function Home() {
       />
       <Hero />
       <Projects />
-      <Blogs />
+      {/* <Blogs /> */}
       <Footer />
     </main>
   );

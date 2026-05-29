@@ -38,11 +38,13 @@
   --color-tertiary: #B9B28A;
 } */
 :root {
-  --color-background: hsl(0, 0%, 0%);
-  --color-text: hsl(0, 0%, 100%);
-  --color-primary: hsl(0 0% 100%);
-  --color-secondary: hsl(0 0% 70%);
-  --color-tertiary: hsl(0 0% 50%);
+
+  /* --color-background: hsl(30, 8%, 7%); */
+  --color-background: hsl(100, 0%, 0%);
+  --color-text: hsl(35, 20%, 90%);
+  --color-primary: hsl(35, 20%, 90%);
+  --color-secondary: hsl(30, 10%, 62%);
+  --color-tertiary: hsl(30, 8%, 42%);
 
   .swiper-pagination-bullet {
     background: rgba(255, 255, 255, 0.4);
@@ -89,8 +91,8 @@ body {
   position: absolute;
   top: -30px;
   left: 0;
-  background: black;
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-background);
   padding: 4px 8px;
   font-size: 12px;
   border-radius: 4px;

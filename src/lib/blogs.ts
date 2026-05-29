@@ -16,6 +16,5 @@ export const blogs: Blog[] = [
     readTime: "3 min read",
     description: "A sample blog post.",
     content: "example-post.md",
-    tags: ["backend", "learning"],
-  },
+    tags: ["backend", "learning"],},
 ];

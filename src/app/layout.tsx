@@ -19,17 +19,17 @@ export const metadata: Metadata = {
     title: "Sathwik Anumandla",
     description:
       "Backend developer and second-year IT student. I like the logical side of engineering — how systems are put together, why they break, how to make them better.",
-    images: [{ url: "/sky.png", width: 512, height: 512, alt: "Sathwik Anumandla" }],
+    images: [{ url: "/favicon.png", width: 512, height: 512, alt: "Sathwik Anumandla" }],
   },
   twitter: {
     card: "summary",
     title: "Sathwik Anumandla",
     description:
       "Backend developer and second-year IT student. I like the logical side of engineering — how systems are put together, why they break, how to make them better.",
-    images: ["/sky.png"],
+    images: ["/favicon.png"],
   },
   icons: {
-    icon: "/sky.png",
+    icon: "/favicon.png",
   },
 };
 
