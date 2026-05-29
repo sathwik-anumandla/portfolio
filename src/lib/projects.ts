@@ -15,7 +15,7 @@ export const projects: Project[] = [
     slug: "kagami",
     title: "kagami",
     date: "March 2026",
-    description: "A minimalist tech news aggregator that delivers concise.",
+    description: "A minimalist tech news aggregator that delivers concise summaries.",
     content:
       "Kagami is a lightweight news platform designed to cut through information overload by presenting only the most relevant tech updates in a clean, distraction-free interface. Instead of long articles or cluttered feeds, it provides short, digestible summaries from trusted sources like engineering blogs, helping developers stay informed quickly and efficiently. The focus of the project is simplicity, speed, and clarity—both in content delivery and user experience.",
     tech: ["next.js", "react", "js", "tailwindcss", "vercel"],

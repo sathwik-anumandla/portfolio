@@ -1,12 +1,30 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import { projects } from "@/lib/projects";
 
-export default function ProjectDetail() {
-  const params = useParams();
-  const slug = params.slug as string;
+type Props = { params: Promise<{ slug: string }> };
+
+export function generateStaticParams() {
+  return projects.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) return { title: "Project not found" };
+  return {
+    title: project.title,
+    description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      url: `/projects/${project.slug}`,
+    },
+  };
+}
+
+export default async function ProjectDetail({ params }: Props) {
+  const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
@@ -14,10 +32,7 @@ export default function ProjectDetail() {
       <main className="container mx-auto w-4/5 sm:w-4/5 md:w-3/5 lg:w-3/5 xl:w-2/5 2xl:w-2/5 space-y-5 py-10">
         <div className="text-center space-y-4">
           <h1 className="text-3xl font-bold">Project not found</h1>
-          <Link
-            href="/projects"
-            className="text-(--color-secondary) hover:text-(--color-primary)"
-          >
+          <Link href="/projects" className="text-(--color-secondary) hover:text-(--color-primary)">
             back to projects
           </Link>
         </div>
@@ -25,8 +40,27 @@ export default function ProjectDetail() {
     );
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: project.title,
+    description: project.description,
+    applicationCategory: "DeveloperApplication",
+    author: {
+      "@type": "Person",
+      name: "Sathwik Anumandla",
+      url: "https://sathwikanumandla.in",
+    },
+    ...(project.live !== "#" && { url: project.live }),
+    ...(project.github !== "#" && { codeRepository: project.github }),
+  };
+
   return (
     <main className="container mx-auto w-4/5 sm:w-4/5 md:w-3/5 lg:w-3/5 xl:w-2/5 2xl:w-2/5 py-10 space-y-5">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Link
         href="/projects"
         className="text-(--color-secondary) hover:text-(--color-primary) flex items-center gap-2 mb-8"

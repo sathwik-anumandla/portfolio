@@ -1,23 +1,32 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
+import BlogCard from "@/components/ui/blog-card";
+import { blogs } from "@/lib/blogs";
+
+export const metadata: Metadata = {
+  title: "Blogs",
+  description: "Writing by Sathwik Anumandla on backend engineering, system design, and whatever else catches his curiosity.",
+};
 
 export default function BlogsPage() {
   return (
-    <main className="container mx-auto w-11/12 sm:w-4/5 md:w-3/4 lg:w-1/2 py-16">
-      <Link href="/" className="text-accent hover:underline flex items-center gap-2 mb-12">
-        <i className="fas fa-arrow-left"></i>
-        <span>Back to home</span>
+    <main className="container mx-auto w-4/5 sm:w-4/5 md:w-3/5 lg:w-3/5 xl:w-2/5 2xl:w-2/5 space-y-5 py-10">
+      <Link
+        href="/"
+        className="text-(--color-secondary) hover:text-(--color-primary) flex items-center gap-2 mb-8"
+      >
+        <span>back to home</span>
       </Link>
 
       <div className="space-y-8">
-        <div>
-          <h1 className="font-melodrama text-5xl font-bold text-accent mb-2">
-            Blog
-          </h1>
-          <p className="text-secondary">
-            Coming soon...
-          </p>
+        <h1 className="font-melodrama text-4xl font-bold text-(--color-primary)">
+          Blogs
+        </h1>
+
+        <div className="flex flex-col gap-2">
+          {blogs.map((blog) => (
+            <BlogCard key={blog.slug} blog={blog} />
+          ))}
         </div>
       </div>
     </main>

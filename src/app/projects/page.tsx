@@ -1,8 +1,12 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import ProjectCard from "@/components/ui/project-card";
 import { projects } from "@/lib/projects";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "A collection of projects built by Sathwik Anumandla — backend tools, web apps, and terminal utilities.",
+};
 
 export default function ProjectsPage() {
   return (

@@ -6,11 +6,13 @@
     url("/fonts/melodrama/Melodrama-Regular.woff2") format("woff2"),
     url("/fonts/melodrama/Melodrama-Regular.woff") format("woff"),
     url("/fonts/melodrama/Melodrama-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Jost";
   src: url("/fonts/jost/Jost-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 .font-jost {
@@ -94,6 +96,59 @@ body {
   border-radius: 4px;
   opacity: 0;
   animation: fadeInOut 2s forwards;
+}
+
+.blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4 {
+  color: var(--color-primary);
+  font-family: Melodrama, Jost, sans-serif;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.blog-content h1 { font-size: 1.75rem; }
+.blog-content h2 { font-size: 1.4rem; }
+.blog-content h3 { font-size: 1.15rem; }
+.blog-content p { margin-bottom: 1rem; }
+.blog-content ul, .blog-content ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+.blog-content ul { list-style-type: disc; }
+.blog-content ol { list-style-type: decimal; }
+.blog-content li { margin-bottom: 0.25rem; }
+.blog-content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.blog-content code {
+  font-family: monospace;
+  font-size: 0.875rem;
+  background: rgba(255,255,255,0.08);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+}
+.blog-content pre {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+.blog-content pre code {
+  background: none;
+  padding: 0;
+}
+.blog-content blockquote {
+  border-left: 2px solid var(--color-tertiary);
+  padding-left: 1rem;
+  color: var(--color-tertiary);
+  margin-bottom: 1rem;
+}
+.blog-content hr {
+  border-color: rgba(255,255,255,0.1);
+  margin: 1.5rem 0;
 }
 
 @keyframes fadeInOut {

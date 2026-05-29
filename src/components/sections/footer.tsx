@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Hero() {
+export default function Footer() {
   const socialLinks = [
     {
       label: "GitHub",
@@ -20,26 +20,24 @@ export default function Hero() {
   ];
 
   return (
-    <section className="card-lg flex justify-between items-start">
-        <div>
-            <p className="text-(--color-tertiary)">
-                Hyderabad, India.
-            </p>
-        </div>
+    <footer className="card-lg flex justify-between items-start">
+      <div>
+        <p className="text-(--color-tertiary)">Hyderabad, India.</p>
+      </div>
       <div className="flex flex-wrap gap-2 my-auto">
         {socialLinks.map((link) => (
           <a
             key={link.label}
             href={link.href}
-            target={link.label === "Blog" ? "" : "_blank"}
-            rel={link.label === "Blog" ? "" : "noopener"}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
             className="text-(--color-tertiary) hover:text-(--color-primary) flex items-center gap-1"
           >
-            <i className={link.icon}></i>
-            
+            <i className={link.icon} aria-hidden="true"></i>
           </a>
         ))}
       </div>
-    </section>
+    </footer>
   );
 }
