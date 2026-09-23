@@ -31,7 +31,7 @@ const jsonLd = {
 
 export default function Home() {
   return (
-    <main className="container  mx-auto w-4/5 md:w-3/5 xl:w-2/5 space-y-5 mt-7 py-10">
+    <main className="container mx-auto w-4/5 md:w-3/5 xl:w-2/5 max-w-xl space-y-5 mt-7 py-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

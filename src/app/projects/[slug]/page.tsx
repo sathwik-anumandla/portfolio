@@ -29,7 +29,7 @@ export default async function ProjectDetail({ params }: Props) {
 
   if (!project) {
     return (
-      <main className="container mx-auto w-4/5 sm:w-4/5 md:w-3/5 lg:w-3/5 xl:w-2/5 2xl:w-2/5 space-y-5 py-10">
+      <main className="container mx-auto w-4/5 md:w-3/5 xl:w-2/5 max-w-xl space-y-5 py-10">
         <div className="text-center space-y-4">
           <h1 className="text-3xl font-bold">Project not found</h1>
           <Link href="/projects" className="text-(--color-secondary) hover:text-(--color-primary)">
@@ -56,7 +56,7 @@ export default async function ProjectDetail({ params }: Props) {
   };
 
   return (
-    <main className="container mx-auto w-4/5 sm:w-4/5 md:w-3/5 lg:w-3/5 xl:w-2/5 2xl:w-2/5 py-10 space-y-5">
+    <main className="container mx-auto w-4/5 md:w-3/5 xl:w-2/5 max-w-xl py-10 space-y-5">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

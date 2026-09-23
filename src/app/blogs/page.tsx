@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function BlogsPage() {
   return (
-    <main className="container mx-auto w-4/5 sm:w-4/5 md:w-3/5 lg:w-3/5 xl:w-2/5 2xl:w-2/5 space-y-5 py-10">
+    <main className="container mx-auto w-4/5 md:w-3/5 xl:w-2/5 max-w-xl space-y-5 py-10">
       <Link
         href="/"
         className="text-(--color-secondary) hover:text-(--color-primary) flex items-center gap-2 mb-8"
