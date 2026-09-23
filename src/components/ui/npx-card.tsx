@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CopyIcon, CheckIcon } from "@/components/ui/icons";
 
 export default function NpxCard() {
   const [copied, setCopied] = useState(false);
@@ -26,7 +27,7 @@ export default function NpxCard() {
           onClick={handleCopy}
           className="cursor-pointer hover:text-(--color-primary) transition-all duration-200 flex items-center gap-1.5 text-sm"
         >
-          <i className={`fa-regular ${copied ? "fa-check" : "fa-copy"} text-xs`}></i>
+          {copied ? <CheckIcon className="w-3.5 h-3.5 text-emerald-400" /> : <CopyIcon className="w-3.5 h-3.5 opacity-70" />}
           <span>{copied ? "copied!" : "copy"}</span>
         </button>
       </div>

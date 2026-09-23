@@ -38,35 +38,11 @@
   --color-tertiary: #B9B28A;
 } */
 :root {
-
-  /* --color-background: hsl(30, 8%, 7%); */
   --color-background: hsl(100, 0%, 0%);
   --color-text: hsl(35, 20%, 90%);
   --color-primary: hsl(35, 20%, 90%);
   --color-secondary: hsl(30, 10%, 62%);
   --color-tertiary: hsl(30, 8%, 42%);
-
-  .swiper-pagination-bullet {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(4px);
-  }
-
-  .swiper-pagination-bullet-active {
-    background: white;
-    transform: scale(1);
-  }
-  .swiper-button-next,
-  .swiper-button-prev {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    color: white;
-  }
-
-  .swiper-button-next::after,
-  .swiper-button-prev::after {
-    font-size: 1.5px;
-  }
 }
 
 html,

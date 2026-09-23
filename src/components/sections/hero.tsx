@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import NpxCard from "@/components/ui/npx-card";
+import { CopyIcon } from "@/components/ui/icons";
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
@@ -28,10 +29,10 @@ export default function Hero() {
           <div className="relative">
             <button
               onClick={handleCopy}
-              className="cursor-pointer transition-all duration-400 hover:text-(--color-primary) flex items-center gap-0.5"
+              className="cursor-pointer transition-all duration-400 hover:text-(--color-primary) flex items-center gap-1.5"
             >
               {email}
-              <i className="fa-regular fa-copy text-xs"></i>
+              <CopyIcon className="w-3.5 h-3.5 opacity-70" />
             </button>
 
             {copied && <span className="tooltip">Copied!</span>}
