@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
+import { ArrowLeftIcon, ExternalLinkIcon } from "@/components/ui/icons";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -32,8 +33,12 @@ export default async function ProjectDetail({ params }: Props) {
       <main className="container mx-auto w-4/5 md:w-3/5 xl:w-2/5 max-w-xl space-y-5 py-10">
         <div className="text-center space-y-4">
           <h1 className="text-3xl font-bold">Project not found</h1>
-          <Link href="/projects" className="text-(--color-secondary) hover:text-(--color-primary)">
-            back to projects
+          <Link
+            href="/projects"
+            className="text-(--color-secondary) hover:text-(--color-primary) inline-flex items-center gap-1.5 text-sm"
+          >
+            <ArrowLeftIcon className="w-3.5 h-3.5" />
+            <span>back to projects</span>
           </Link>
         </div>
       </main>
@@ -49,7 +54,7 @@ export default async function ProjectDetail({ params }: Props) {
     author: {
       "@type": "Person",
       name: "Sathwik Anumandla",
-      url: "https://sathwikanumandla.in",
+      url: "https://sathwik.work",
     },
     ...(project.live !== "#" && { url: project.live }),
     ...(project.github !== "#" && { codeRepository: project.github }),
@@ -63,8 +68,9 @@ export default async function ProjectDetail({ params }: Props) {
       />
       <Link
         href="/projects"
-        className="text-(--color-secondary) hover:text-(--color-primary) flex items-center gap-2 mb-8"
+        className="text-(--color-secondary) hover:text-(--color-primary) transition-colors flex items-center gap-1.5 mb-8 text-sm group"
       >
+        <ArrowLeftIcon className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" />
         <span>back to projects</span>
       </Link>
 
@@ -77,15 +83,16 @@ export default async function ProjectDetail({ params }: Props) {
             <span className="text-(--color-secondary)">{project.date}</span>
           </div>
           <div>
-            <p className="text-(--color-secondary) flex items-center gap-1.5">
+            <p className="text-(--color-secondary) flex items-center gap-2 text-sm">
               {project.github !== "#" && (
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-(--color-primary) transition-all flex items-center gap-2"
+                  className="hover:text-(--color-primary) transition-colors inline-flex items-center gap-1"
                 >
-                  <span>repo</span>
+                  <span>github</span>
+                  <ExternalLinkIcon className="w-3.5 h-3.5" />
                 </a>
               )}
               {project.live !== "#" && project.github !== "#" && <span>·</span>}
@@ -94,9 +101,10 @@ export default async function ProjectDetail({ params }: Props) {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-(--color-primary) transition-all flex items-center gap-2"
+                  className="hover:text-(--color-primary) transition-colors inline-flex items-center gap-1"
                 >
                   <span>live</span>
+                  <ExternalLinkIcon className="w-3.5 h-3.5" />
                 </a>
               )}
             </p>
@@ -110,9 +118,14 @@ export default async function ProjectDetail({ params }: Props) {
         </div>
 
         {project.tech.length > 0 && (
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 pt-1">
             {project.tech.map((tech) => (
-              <span key={tech}>{tech}</span>
+              <span
+                key={tech}
+                className="text-xs px-3 py-1 rounded-full bg-white/8 text-(--color-secondary)"
+              >
+                {tech}
+              </span>
             ))}
           </div>
         )}

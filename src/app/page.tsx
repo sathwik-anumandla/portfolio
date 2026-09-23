@@ -7,9 +7,9 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://sathwikanumandla.in/#person",
+      "@id": "https://sathwik.work/#person",
       name: "Sathwik Anumandla",
-      url: "https://sathwikanumandla.in",
+      url: "https://sathwik.work",
       jobTitle: "Backend Developer",
       description:
         "Backend developer and second-year IT student focused on the logical side of engineering — system design, Node.js, Express, MySQL, and Python.",
@@ -20,10 +20,10 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://sathwikanumandla.in/#website",
-      url: "https://sathwikanumandla.in",
+      "@id": "https://sathwik.work/#website",
+      url: "https://sathwik.work",
       name: "Sathwik Anumandla",
-      author: { "@id": "https://sathwikanumandla.in/#person" },
+      author: { "@id": "https://sathwik.work/#person" },
     },
   ],
 };

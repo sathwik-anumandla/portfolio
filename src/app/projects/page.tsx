@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ProjectCard from "@/components/ui/project-card";
 import { projects } from "@/lib/projects";
+import { ArrowLeftIcon } from "@/components/ui/icons";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -13,8 +14,9 @@ export default function ProjectsPage() {
     <main className="container mx-auto w-4/5 md:w-3/5 xl:w-2/5 max-w-xl space-y-5 py-10">
       <Link
         href="/"
-        className="text-(--color-secondary) hover:text-(--color-primary) flex items-center gap-2 mb-8"
+        className="text-(--color-secondary) hover:text-(--color-primary) transition-colors flex items-center gap-1.5 mb-8 text-sm group"
       >
+        <ArrowLeftIcon className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" />
         <span>back to home</span>
       </Link>
 

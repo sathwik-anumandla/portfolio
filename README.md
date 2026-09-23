@@ -1,4 +1,4 @@
-# sathwikanumandla.in
+# sathwik.work
 
 Personal portfolio website built with Next.js 16, React 19, and Tailwind CSS 4.
 
@@ -7,7 +7,7 @@ Personal portfolio website built with Next.js 16, React 19, and Tailwind CSS 4.
 - **Framework** — Next.js 16 (App Router)
 - **Styling** — Tailwind CSS 4 with CSS custom properties for theming
 - **Fonts** — Melodrama (headings), Jost (body), self-hosted
-- **Icons** — Font Awesome 7
+- **Icons** — Native zero-dependency SVG components
 
 ## Development
 
