@@ -24,7 +24,7 @@ export default function ProjectsPage() {
             Projects
           </h1>
           <p className="text-(--color-secondary)">
-            A collection of projects I've worked on
+            A collection of projects I&apos;ve worked on
           </p>
         </div>
 

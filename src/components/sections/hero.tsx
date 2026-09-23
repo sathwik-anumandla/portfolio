@@ -1,10 +1,11 @@
 "use client";
-import Link from "next/link";
+
 import { useState } from "react";
 import NpxCard from "@/components/ui/npx-card";
+
 export default function Hero() {
   const [copied, setCopied] = useState(false);
-  const email = "hi@example.com";
+  const email = "sathwikanumandla@hotmail.com";
 
   const handleCopy = async () => {
     try {
@@ -29,7 +30,7 @@ export default function Hero() {
               onClick={handleCopy}
               className="cursor-pointer transition-all duration-400 hover:text-(--color-primary) flex items-center gap-0.5"
             >
-              sathwikanumandla@hotmail.com
+              {email}
               <i className="fa-regular fa-copy text-xs"></i>
             </button>
 
@@ -40,11 +41,11 @@ export default function Hero() {
 
       <div className="text-(--color-secondary) leading-relaxed">
         <p>
-          I'm a <span className="text-(--color-primary)">backend developer</span> and a second-year IT student. I like the{" "}
-          <span className="text-(--color-primary)">logical side of engineering</span> — how systems are put together, why they break, how to make them better. Frontend's not really my thing. I keep things{" "}
-          <span className="text-(--color-primary)">minimal</span> and leave the creative stuff to people who are actually good at it. When I'm not coding I'm usually deep in something —{" "}
+          I&apos;m a <span className="text-(--color-primary)">backend developer</span> and a second-year IT student. I like the{" "}
+          <span className="text-(--color-primary)">logical side of engineering</span> — how systems are put together, why they break, how to make them better. Frontend&apos;s not really my thing. I keep things{" "}
+          <span className="text-(--color-primary)">minimal</span> and leave the creative stuff to people who are actually good at it. When I&apos;m not coding I&apos;m usually deep in something —{" "}
           <span className="text-(--color-primary)">evolution, neuroscience, philosophy</span>. The topic changes, but the{" "}
-          <span className="text-(--color-primary)">curiosity</span> doesn't.
+          <span className="text-(--color-primary)">curiosity</span> doesn&apos;t.
         </p>
       </div>
       <NpxCard />
