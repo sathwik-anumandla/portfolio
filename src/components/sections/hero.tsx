@@ -45,7 +45,7 @@ export default function Hero() {
           <span className="text-(--color-primary)">logical side of engineering</span> — how systems are put together, why they break, how to make them better. Frontend&apos;s not really my thing. I keep things{" "}
           <span className="text-(--color-primary)">minimal</span> and leave the creative stuff to people who are actually good at it. When I&apos;m not coding I&apos;m usually deep in something —{" "}
           <span className="text-(--color-primary)">evolution, neuroscience, philosophy</span>. The topic changes, but the{" "}
-          <span className="text-(--color-primary)">curiosity</span> doesn&apos;t.
+          <span className="text-(--color-primary)">curiosity</span>{" "}doesn&apos;t.
         </p>
       </div>
       <NpxCard />
